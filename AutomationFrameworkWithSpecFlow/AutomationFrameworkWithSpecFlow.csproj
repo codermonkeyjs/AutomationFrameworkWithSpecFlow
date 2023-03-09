@@ -28,4 +28,19 @@
     <Folder Include="Features\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Utilities\DefaultValues.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DefaultValues.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Utilities\DefaultValues.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>DefaultValues.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
 </Project>

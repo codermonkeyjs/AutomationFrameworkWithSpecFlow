@@ -1,36 +1,37 @@
+
 namespace AutomationFrameworkWithSpecFlow.StepDefinition
 {
     [Binding]
-    public class SignUpStepDefinitions
+    public class SignUpStepDefinitions : EventHooks
     {
         [Given(@"I navigate to the website")]
         public void GivenINavigateToTheWebsite()
         {
-            throw new PendingStepException();
+            PerformBrowserManagerAction.NavigateToURL(DefaultValues.Default.DefaultURL);
         }
 
         [Given(@"I enter username")]
         public void GivenIEnterUsername()
         {
-            throw new PendingStepException();
+            PerformSignUpPageAction.EnterUsername(DefaultValues.Default.DefaultUserName);
         }
 
         [Given(@"I enter password")]
         public void GivenIEnterPassword()
         {
-            throw new PendingStepException();
+            PerformSignUpPageAction.EnterPassword(DefaultValues.Default.DefaultPassword);
         }
 
         [Given(@"I enter email")]
         public void GivenIEnterEmail()
         {
-            throw new PendingStepException();
+            PerformSignUpPageAction.EnterEmail(DefaultValues.Default.DefaultEmail);
         }
 
         [When(@"I click the submit button")]
         public void WhenIClickTheSubmitButton()
         {
-            throw new PendingStepException();
+            PerformSignUpPageAction.ClickSignUpButton();
         }
 
         [Then(@"I should be able to sign up and sign in")]

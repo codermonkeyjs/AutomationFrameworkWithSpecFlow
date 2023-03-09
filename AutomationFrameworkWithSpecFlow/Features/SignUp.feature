@@ -1,6 +1,7 @@
 ﻿Feature: SignUp
 
-A short summary of the feature
+In order to sign up, I need to enter my username, email and password. 
+Clicking the submit button should sign me up successfully.
 
 @tag1
 Scenario: Sign Up

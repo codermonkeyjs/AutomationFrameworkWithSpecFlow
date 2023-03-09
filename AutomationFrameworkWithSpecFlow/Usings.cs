@@ -9,3 +9,4 @@ global using OpenQA.Selenium.Support.UI;
 global using WebDriverManager;
 global using WebDriverManager.DriverConfigs.Impl;
 global using System.Linq.Expressions;
+global using OpenQA.Selenium.Interactions;

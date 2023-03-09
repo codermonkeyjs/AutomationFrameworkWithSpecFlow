@@ -51,19 +51,19 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
             {
                 _ = elementState switch
                 {
-                    ElementState.Clickable => SignUpPageSetUp
+                    ElementState.Clickable => EventHooks
                                               .PerformWaitManagerAction
                                               .UntilElementToBeClickable(by, timeoutInSeconds),
-                    ElementState.NotVisible => SignUpPageSetUp
+                    ElementState.NotVisible => EventHooks
                                               .PerformWaitManagerAction
                                               .UntilInvisibilityOfElementLocated(by, timeoutInSeconds),
-                    ElementState.UntilUrlMatches => SignUpPageSetUp
+                    ElementState.UntilUrlMatches => EventHooks
                                                     .PerformWaitManagerAction
                                                     .UntilUrlMatches(url, timeoutInSeconds),
-                    ElementState.UrlContains => SignUpPageSetUp
+                    ElementState.UrlContains => EventHooks
                                                 .PerformWaitManagerAction
                                                 .UntilUrlContains(url, timeoutInSeconds),
-                    ElementState.Visible => SignUpPageSetUp
+                    ElementState.Visible => EventHooks
                                             .PerformWaitManagerAction
                                             .UntilElementIsVisible(by, timeoutInSeconds),
                     _ => throw new ArgumentOutOfRangeException(nameof(elementState),
@@ -74,7 +74,7 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
             {
                 return null;
             }
-            return SignUpPageSetUp.Driver.FindElements(by);
+            return EventHooks.Driver.FindElements(by);
                 
         }
     }
