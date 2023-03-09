@@ -1,8 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using TechTalk.SpecFlow;
-
-namespace AutomationFrameworkWithSpecFlow.Utilities
+﻿namespace AutomationFrameworkWithSpecFlow.Utilities
 {
     [Binding]
     public class EventHooks
