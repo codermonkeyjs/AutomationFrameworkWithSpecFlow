@@ -1,8 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using WebDriverManager;
-using WebDriverManager.DriverConfigs.Impl;
-
+﻿
 namespace AutomationFrameworkWithSpecFlow.Utilities
 {
     public class DriverFactory

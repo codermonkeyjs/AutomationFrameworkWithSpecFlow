@@ -51,9 +51,32 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
             {
                 _ = elementState switch
                 {
-                    ElementState.Clickable =>
-                }
+                    ElementState.Clickable => SignUpPageSetUp
+                                              .PerformWaitManagerAction
+                                              .UntilElementToBeClickable(by, timeoutInSeconds),
+                    ElementState.NotVisible => SignUpPageSetUp
+                                              .PerformWaitManagerAction
+                                              .UntilInvisibilityOfElementLocated(by, timeoutInSeconds),
+                    ElementState.UntilUrlMatches => SignUpPageSetUp
+                                                    .PerformWaitManagerAction
+                                                    .UntilUrlMatches(url, timeoutInSeconds),
+                    ElementState.UrlContains => SignUpPageSetUp
+                                                .PerformWaitManagerAction
+                                                .UntilUrlContains(url, timeoutInSeconds),
+                    ElementState.Visible => SignUpPageSetUp
+                                            .PerformWaitManagerAction
+                                            .UntilElementIsVisible(by, timeoutInSeconds),
+                    _ => throw new ArgumentOutOfRangeException(nameof(elementState),
+                                                               $"The wait type of : {elementState} is not supported at this time"),
+                };
             }
+            catch(Exception ex)
+            {
+                return null;
+            }
+            return SignUpPageSetUp.Driver.FindElements(by);
+                
         }
     }
 }
+

@@ -3,18 +3,20 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
 {
     public class SignUpPageActions : SignUpPageElements
     {
-        public void EnterUsername(string username)
+        public bool EnterUsername(string username)
         {
+            bool success;
             try
             {
-                username.SendKeys("");
+                UsernameField(ElementState.Clickable, 10).SendText(username);
+                success = true;
 
             }
             catch(ElementNotInteractableException ex)
             {
-
+                success = false;
             }
-
+            return success;
         }
     }
 }

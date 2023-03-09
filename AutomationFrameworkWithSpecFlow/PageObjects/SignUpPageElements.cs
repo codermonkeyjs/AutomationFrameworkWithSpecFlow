@@ -1,8 +1,10 @@
 ﻿
 
+using AutomationFrameworkWithSpecFlow.PageObjects.ElementTypes;
+
 namespace AutomationFrameworkWithSpecFlow.PageObjects
 {
-    public class SignUpPageElements :PageElementsCommon
+    public class SignUpPageElements : PageElementsCommon
     {
         
         public SignUpPageElements() 
@@ -10,9 +12,12 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
            driver = EventHooks.driver;
         }
         IWebDriver driver;
-        
-        IWebElement username => driver.FindElement(By.XPath("//input[@placeholder='Username']"));
-        IWebElement password => driver.FindElement(By.XPath(""));
+
+        protected InputField UsernameField(ElementState elementState, int maxWaitInSeconds) =>
+            new InputField(FindElement(By.XPath("//input[@placeholder='Username']"),
+                                       elementState,
+                                       maxWaitInSeconds));
+
     }
     
 }
