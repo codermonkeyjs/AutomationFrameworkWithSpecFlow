@@ -16,7 +16,7 @@ namespace AutomationFrameworkWithSpecFlow.Utilities
         [AfterScenario]
         public void AfterScenario()
         {
-           //Driver.Quit();
+           Driver.Quit();
         }
     }
 }
