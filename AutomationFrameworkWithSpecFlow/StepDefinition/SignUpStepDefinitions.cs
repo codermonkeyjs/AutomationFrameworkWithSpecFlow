@@ -1,5 +1,6 @@
 
 using AutomationFrameworkWithSpecFlow.PageObjects;
+using System.Security.Cryptography;
 
 namespace AutomationFrameworkWithSpecFlow.StepDefinition
 {
@@ -46,7 +47,8 @@ namespace AutomationFrameworkWithSpecFlow.StepDefinition
         [Then(@"I should be able to sign up and sign in")]
         public void ThenIShouldBeAbleToSignUpAndSignIn()
         {
-            throw new PendingStepException();
+            Thread.Sleep(1000);
+            Assert.That(PerformSignUpPageAction.PopularTagsIsPresent, Is.True);
         }
     }
 }

@@ -52,7 +52,7 @@ namespace AutomationFrameworkWithSpecFlow.Utilities {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("codermonkeyjs@gmail.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("testemail")]
         public string DefaultEmail {
             get {
                 return ((string)(this["DefaultEmail"]));

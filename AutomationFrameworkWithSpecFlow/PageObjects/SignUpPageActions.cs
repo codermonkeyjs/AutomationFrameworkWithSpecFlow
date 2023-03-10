@@ -3,6 +3,7 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
 {
     public class SignUpPageActions : SignUpPageElements
     {
+       
         public SignUpPageActions()
         {
             driver = EventHooks.Driver;
@@ -16,10 +17,12 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
 
         public bool EnterUsername(string username)
         {
+            Random randomGenerator = new Random();
+            int randomInt = randomGenerator.Next(1000);
             bool success;
             try
             {
-                UsernameField.SendKeys(username);
+                UsernameField.SendKeys(username + randomInt);
                 success = true;
 
             }
@@ -48,10 +51,12 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
 
         public bool EnterEmail(string email)
         {
+            Random randomGenerator = new Random();
+            int randomInt = randomGenerator.Next(1000);
             bool success;
             try
             {
-                EmailField.SendKeys(email);
+                EmailField.SendKeys(email + randomInt +"@gmail.com");
                 success = true;
 
             }
@@ -77,5 +82,15 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
             }
             return success;
         }
+
+        public bool PopularTagsIsPresent()
+        {
+            bool success;
+
+            bool isDisplayed = PopularTags.Displayed;
+            success = isDisplayed;
+            return success;
+        }
+            
     }
 }

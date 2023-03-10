@@ -13,6 +13,7 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
         public IWebElement PasswordField => driver.FindElement(By.XPath("//input[@placeholder='Password']"));
         public IWebElement EmailField => driver.FindElement(By.XPath("//input[@placeholder='Email']"));
         public IWebElement SignUpButton => driver.FindElement(By.XPath("//button[@type='submit']"));
+        public IWebElement PopularTags => driver.FindElement(By.XPath("//p[text()='Popular Tags']"));
 
 
     }
