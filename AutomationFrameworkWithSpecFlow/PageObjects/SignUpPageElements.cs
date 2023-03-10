@@ -1,32 +1,19 @@
 ﻿
-
-using AutomationFrameworkWithSpecFlow.PageObjects.ElementTypes;
-
 namespace AutomationFrameworkWithSpecFlow.PageObjects
 {
-    public class SignUpPageElements : PageElementsCommon
+    public class SignUpPageElements
     {
-        
         public SignUpPageElements() 
         {
+            driver = EventHooks.Driver;
         }
+        IWebDriver driver;
 
-        protected InputField UsernameField(ElementState elementState, int maxWaitInSeconds) =>
-            new InputField(FindElement(By.XPath("//input[@placeholder='Username']"),
-                                       elementState,
-                                       maxWaitInSeconds));
-        protected InputField PasswordField(ElementState elementState, int maxWaitInSeconds) =>
-            new InputField(FindElement(By.XPath("//input[@placeholder='Email']"),
-                                        elementState,
-                                        maxWaitInSeconds));
-        protected InputField EmailField(ElementState elementState, int maxWaitInSeconds) =>
-            new InputField(FindElement(By.XPath("//input[@placeholder='Password']"),
-                                        elementState,
-                                        maxWaitInSeconds));
-        protected Button SignUpButton(ElementState elementState, int maxWaitInSeconds) =>
-            new Button(FindElement(By.XPath("//button[@type='submit']"),
-                                    elementState,
-                                    maxWaitInSeconds));
+        public IWebElement UsernameField => driver.FindElement(By.XPath("//input[@placeholder='Username']"));
+        public IWebElement PasswordField => driver.FindElement(By.XPath("//input[@placeholder='Password']"));
+        public IWebElement EmailField => driver.FindElement(By.XPath("//input[@placeholder='Email']"));
+        public IWebElement SignUpButton => driver.FindElement(By.XPath("//button[@type='submit']"));
+
 
     }
     

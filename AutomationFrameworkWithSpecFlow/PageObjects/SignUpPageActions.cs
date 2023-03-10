@@ -3,17 +3,28 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
 {
     public class SignUpPageActions : SignUpPageElements
     {
+        public SignUpPageActions()
+        {
+            driver = EventHooks.Driver;
+        }
+        IWebDriver driver;
+
+        public void NavigateToURL(string url)
+        {
+            driver.Navigate().GoToUrl(url);
+        }
+
         public bool EnterUsername(string username)
         {
             bool success;
             try
             {
-                UsernameField(ElementState.Clickable, 10).SendText(username);
+                UsernameField.SendKeys(username);
                 success = true;
 
             }
             catch(ElementNotInteractableException ex)
-            {
+            {   
                 success = false;
             }
             return success;
@@ -24,7 +35,7 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
             bool success;
             try
             {
-                PasswordField(ElementState.Clickable, 10).SendText(password);
+                PasswordField.SendKeys(password);
                 success = true;
 
             }
@@ -40,7 +51,7 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
             bool success;
             try
             {
-                EmailField(ElementState.Clickable, 10).SendText(email);
+                EmailField.SendKeys(email);
                 success = true;
 
             }
@@ -56,7 +67,7 @@ namespace AutomationFrameworkWithSpecFlow.PageObjects
             bool success;
             try
             {
-                SignUpButton(ElementState.Clickable, 10).Element.Click();
+                SignUpButton.Click();
                 success = true;
 
             }

@@ -2,13 +2,14 @@
 namespace AutomationFrameworkWithSpecFlow.Utilities
 {
     public class WaitManager
-    { 
+    {
         private readonly IWebDriver _driver;
 
-        internal WaitManager(IWebDriver webDriver) 
-        { 
+        internal WaitManager(IWebDriver webDriver)
+        {
             _driver = webDriver;
         }
+
         public DefaultWait<IWebDriver> InSecondsCheckingEveryXMilliSeconds(int seconds, int milliseconds)
         {
             DefaultWait<IWebDriver> wait = new DefaultWait<IWebDriver>(_driver)

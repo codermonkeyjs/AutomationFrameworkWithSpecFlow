@@ -58,5 +58,14 @@ namespace AutomationFrameworkWithSpecFlow.Utilities {
                 return ((string)(this["DefaultEmail"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Chrome")]
+        public string BrowserBeingUsed {
+            get {
+                return ((string)(this["BrowserBeingUsed"]));
+            }
+        }
     }
 }

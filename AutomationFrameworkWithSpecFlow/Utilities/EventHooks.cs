@@ -1,33 +1,24 @@
 ﻿using AutomationFrameworkWithSpecFlow.PageObjects;
+using TechTalk.SpecFlow;
 
 namespace AutomationFrameworkWithSpecFlow.Utilities
 {
     [Binding]
     public class EventHooks
     {
-        public static IWebDriver Driver
-        {
-            get; private set;
-        }
-
-        public static SignUpPageActions PerformSignUpPageAction;
-        public static WaitManager PerformWaitManagerAction;
-        public static BrowserManager PerformBrowserManagerAction;
+        public static IWebDriver Driver;
 
         [BeforeScenario]
         public void BeforeScenario()
         {
-            PerformSignUpPageAction = new SignUpPageActions();
-            PerformWaitManagerAction = new WaitManager(Driver);
-            PerformBrowserManagerAction = new BrowserManager(Driver);
-            var driverFactory = new DriverFactory();
-            driverFactory.GetDriver(DriverFactory.DriverType.chrome, false);
+            Driver = new ChromeDriver();
+            Driver.Manage().Window.Maximize();
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-                Driver.Quit();
+            Driver.Quit();
         }
     }
 }

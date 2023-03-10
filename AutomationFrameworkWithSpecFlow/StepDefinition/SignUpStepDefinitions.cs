@@ -1,13 +1,22 @@
 
+using AutomationFrameworkWithSpecFlow.PageObjects;
+
 namespace AutomationFrameworkWithSpecFlow.StepDefinition
 {
     [Binding]
-    public class SignUpStepDefinitions : EventHooks
+    public class SignUpStepDefinitions
     {
+        SignUpPageActions PerformSignUpPageAction;
+
+        public SignUpStepDefinitions() 
+        { 
+            PerformSignUpPageAction= new SignUpPageActions();
+
+        }
         [Given(@"I navigate to the website")]
         public void GivenINavigateToTheWebsite()
         {
-            PerformBrowserManagerAction.NavigateToURL(DefaultValues.Default.DefaultURL);
+            PerformSignUpPageAction.NavigateToURL(DefaultValues.Default.DefaultURL);
         }
 
         [Given(@"I enter username")]
